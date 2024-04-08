@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/stadium_management/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stadium_management/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stadium_management/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stadium_management/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stadium_management/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/api_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/api_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stadium_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Django Server.runserver.executor&quot;: &quot;Debug&quot;,
+    &quot;Django Server.runserver.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -151,12 +152,23 @@
       <option name="presentableId" value="Default" />
       <updated>1712496488452</updated>
       <workItem from="1712496495645" duration="9702000" />
-      <workItem from="1712555879265" duration="6762000" />
+      <workItem from="1712555879265" duration="12291000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

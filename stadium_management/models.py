@@ -15,7 +15,7 @@ from rest_framework.exceptions import ValidationError
 class Stadium(models.Model):
     name = models.CharField(verbose_name=_("name"), max_length=50, unique=True)
     description = models.TextField(verbose_name=_("description"))
-    logo = models.ImageField(verbose_name=_("logo"), default="")
+    logo = models.ImageField(verbose_name=_("logo"), default="/static/images/logo.png")
     capacity = models.PositiveIntegerField(verbose_name=_("capacity"))
 
     class Meta:
