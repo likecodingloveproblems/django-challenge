@@ -101,15 +101,49 @@ class TestMatchAdmin:
             host_team=host_team,
             guest_team=guest_team,
             stadium=stadium,
-        )
-        assert match.exists()
-        assert Seat.objects.filter(match=match.first()).count() == stadium.capacity
+        ).first()
+        assert match is not None
+        seats = Seat.objects.filter(match=match)
+        assert seats.count() == stadium.capacity
+        assert seats.first().price == match.seat_price
 
     def test_view_match(self, admin_client):
         match = baker.make(Match)
         url = reverse(
             "admin:stadium_management_match_change",
             kwargs={"object_id": match.pk},
+        )
+        response = admin_client.get(url)
+        assert response.status_code == HTTPStatus.OK
+
+
+class TestSeatAdmin:
+    def test_changelist(self, admin_client):
+        url = reverse("admin:stadium_management_seat_changelist")
+        response = admin_client.get(url)
+        assert response.status_code == HTTPStatus.OK
+
+    def test_add(self, admin_client):
+        url = reverse("admin:stadium_management_seat_add")
+        response = admin_client.get(url)
+        assert response.status_code == HTTPStatus.OK
+        match = baker.make(Match, id=1)
+        response = admin_client.post(
+            url,
+            data={
+                "number": 1,
+                "match": 1,
+                "price": 1000,
+            },
+        )
+        assert response.status_code == HTTPStatus.FOUND
+        assert Seat.objects.filter(number=1, match=match, price=1000).exists()
+
+    def test_view_seat(self, admin_client):
+        seat = baker.make(Seat)
+        url = reverse(
+            "admin:stadium_management_seat_change",
+            kwargs={"object_id": seat.pk},
         )
         response = admin_client.get(url)
         assert response.status_code == HTTPStatus.OK

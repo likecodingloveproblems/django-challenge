@@ -103,8 +103,12 @@ class Seat(models.Model):
 
     number = models.PositiveIntegerField(verbose_name=_("number"))
     match = models.ForeignKey(Match, on_delete=models.CASCADE, verbose_name=_("match"))
-    is_reserved = models.BooleanField(verbose_name=_("is reserved?"), default=False)
-    full_name = models.CharField(verbose_name=_("full name"), default="")
+    is_reserved = models.BooleanField(
+        verbose_name=_("is reserved?"),
+        default=False,
+        blank=True,
+    )
+    full_name = models.CharField(verbose_name=_("full name"), default="", blank=True)
     price = models.PositiveIntegerField(verbose_name=_("price"))
 
     class Meta:
