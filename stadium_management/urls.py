@@ -1,9 +1,15 @@
-from django.urls import path
+from django.conf import settings
+from rest_framework.routers import DefaultRouter
+from rest_framework.routers import SimpleRouter
 
-from stadium_management import views
+from stadium_management.views import StadiumViewSet
 
 app_name = "stadium_management"
 
+router = DefaultRouter() if settings.DEBUG else SimpleRouter()
+
+router.register("stadium", StadiumViewSet)
+
 urlpatterns = [
-    path("stadium/", views.StadiumAddView.as_view(), name="add-stadium"),
+    *router.urls,
 ]

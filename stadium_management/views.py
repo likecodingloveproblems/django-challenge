@@ -2,21 +2,17 @@ from drf_spectacular.utils import OpenApiExample
 from drf_spectacular.utils import OpenApiParameter
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
-from rest_framework.permissions import IsAdminUser
-from rest_framework.request import Request
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework import viewsets
 
+from stadium_management.models import Stadium
+from stadium_management.permissions import IsAdminUserOrReadOnly
 from stadium_management.serializers import StadiumSerializer
 
 
-class StadiumAddView(APIView):
-    """
-    Adding a new stadium
-    """
-
-    permission_classes = [IsAdminUser]
+class StadiumViewSet(viewsets.ModelViewSet):
+    queryset = Stadium.objects.all()
     serializer_class = StadiumSerializer
+    permission_classes = [IsAdminUserOrReadOnly]
 
     @extend_schema(
         parameters=[
@@ -65,19 +61,5 @@ class StadiumAddView(APIView):
             ),
         ],
     )
-    def post(self, request: Request) -> Response:
-        """
-        Create a new stadium.
-
-        :param request: The HTTP request object.
-        :type request: Request
-        :return: The HTTP response object.
-        :type: Response
-        """
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(
-            data=serializer.data,
-            status=status.HTTP_201_CREATED,
-        )
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)

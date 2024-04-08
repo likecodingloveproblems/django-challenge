@@ -10,5 +10,5 @@ class StadiumSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stadium
-        fields = ["name", "description", "logo", "capacity"]
+        fields = ["id", "name", "description", "logo", "capacity"]
         extra_kwargs = {"logo": {"required": False, "allow_null": True}}
