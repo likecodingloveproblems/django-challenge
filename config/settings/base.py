@@ -49,7 +49,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres:///matchticketselling",
+        default="postgres://matchticketselling:matchticketselling@localhost:5432/matchticketselling",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -87,11 +87,13 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "pgtrigger",
 ]
 
 LOCAL_APPS = [
     "matchticketselling.users",
     # Your stuff: custom apps go here
+    "stadium_management",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

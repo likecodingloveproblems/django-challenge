@@ -6,12 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/django-challenge.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stadium_management/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stadium_management/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stadium_management/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stadium_management/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/matchticketselling.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/matchticketselling.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.readthedocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.readthedocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stadium_management/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stadium_management/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712496488452</updated>
       <workItem from="1712496495645" duration="9702000" />
-      <workItem from="1712555879265" duration="216000" />
+      <workItem from="1712555879265" duration="3091000" />
     </task>
     <servers />
   </component>
