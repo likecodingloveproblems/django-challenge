@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounting/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matchticketselling/users/api/auth_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matchticketselling/users/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matchticketselling/users/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/api_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/api_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stadium_management/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stadium_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stadium_management/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/stadium_management/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +49,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Django Server.runserver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mam/mycode/arman-challenge/django-challenge/manage.py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,10 +67,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/matchticketselling/users/api" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.runserver">
+  <component name="RunManager" selected="Python.manage">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="django-challenge" />
       <option name="ENV_FILES" value="" />
@@ -92,6 +88,30 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="matchticketselling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (venv)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="shell_plus" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -141,6 +161,15 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.migrate" />
+      <item itemvalue="Django Server.runserver" />
+      <item itemvalue="Django Server.runserver_plus" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.merge_production_dotenvs_in_dotenv" />
+      <item itemvalue="Python tests.pytest: ." />
+      <item itemvalue="Python tests.pytest: users" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -159,7 +188,7 @@
       <updated>1712496488452</updated>
       <workItem from="1712496495645" duration="9702000" />
       <workItem from="1712555879265" duration="30444000" />
-      <workItem from="1712604576392" duration="1113000" />
+      <workItem from="1712604576392" duration="6887000" />
     </task>
     <servers />
   </component>
@@ -183,5 +212,8 @@
         <watch expression="request.method" language="Python" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/django_challenge$manage.coverage" NAME="manage Coverage Results" MODIFIED="1712607577123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
