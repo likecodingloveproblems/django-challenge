@@ -9,9 +9,12 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 
 from stadium_management.models import Match
+from stadium_management.models import Seat
 from stadium_management.models import Stadium
+from stadium_management.permissions import IsAdminAndNotReservedOrReadOnly
 from stadium_management.permissions import IsAdminUserOrReadOnly
 from stadium_management.serializers import MatchSerializer
+from stadium_management.serializers import SeatSerializer
 from stadium_management.serializers import StadiumSerializer
 
 
@@ -128,3 +131,9 @@ class MatchViewSet(
         :rtype: Response
         """
         return super().create(request, *args, **kwargs)
+
+
+class SeatViewSet(viewsets.ModelViewSet):
+    queryset = Seat.objects.all()
+    serializer_class = SeatSerializer
+    permission_classes = [IsAdminAndNotReservedOrReadOnly]

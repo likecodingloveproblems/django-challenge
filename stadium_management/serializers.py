@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from stadium_management.models import Match
+from stadium_management.models import Seat
 from stadium_management.models import Stadium
 
 
@@ -51,3 +52,9 @@ class MatchSerializer(serializers.ModelSerializer):
         if does_create_seats:
             obj.create_seats()
         return obj
+
+
+class SeatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Seat
+        fields = ["number", "match", "is_reserved"]
