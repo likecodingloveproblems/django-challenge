@@ -51,7 +51,7 @@ class InvoiceItem(models.Model):
         verbose_name_plural = _("invoice_items")
         constraints = [
             UniqueConstraint(
-                fields=["purchase_id", "seat_id"],
+                fields=["invoice_id", "seat_id"],
                 name="seat_can_be_bought_one_time",
             ),
             CheckConstraint(
