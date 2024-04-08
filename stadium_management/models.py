@@ -87,7 +87,7 @@ class Match(LifecycleModel):
     def create_seats(self):
         seats = [
             Seat(number=number, match=self, price=self.seat_price)
-            for number in range(1, self.stadium.capacity)
+            for number in range(1, self.stadium.capacity + 1)
         ]
 
         Seat.objects.bulk_create(seats)
@@ -117,7 +117,7 @@ class Seat(models.Model):
             ),
             CheckConstraint(
                 check=(Q(is_reserved=True) & ~Q(full_name=""))
-                & Q(is_reserved=False, full_name=""),
+                | Q(is_reserved=False, full_name=""),
                 name="reserved_seats_must_have_full_name",
             ),
         ]
