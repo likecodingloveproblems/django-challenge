@@ -13,5 +13,9 @@ router.register("users", UserViewSet)
 app_name = "api"
 urlpatterns = [
     *router.urls,
-    path("stadium-management/", include("stadium_management.urls")),
+    path(
+        "stadium-management/",
+        include("stadium_management.urls", namespace="stadium_management"),
+    ),
+    path("accounting/", include("accounting.urls", namespace="accounting")),
 ]

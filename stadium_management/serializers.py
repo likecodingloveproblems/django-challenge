@@ -35,6 +35,7 @@ class MatchSerializer(serializers.ModelSerializer):
             "guest_team",
             "stadium",
             "datetime",
+            "seat_price",
             "does_create_seats",
         ]
 
@@ -57,4 +58,4 @@ class MatchSerializer(serializers.ModelSerializer):
 class SeatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seat
-        fields = ["number", "match", "is_reserved"]
+        fields = ["number", "match", "is_reserved", "price"]

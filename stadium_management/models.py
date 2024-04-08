@@ -59,6 +59,7 @@ class Match(LifecycleModel):
         verbose_name=_("stadium"),
     )
     datetime = models.DateTimeField(verbose_name=_("datetime"))
+    seat_price = models.PositiveIntegerField(verbose_name=_("seat price"), default=0)
 
     class Meta:
         verbose_name = _("match")
@@ -85,7 +86,7 @@ class Match(LifecycleModel):
 
     def create_seats(self):
         seats = [
-            Seat(number=number, match=self)
+            Seat(number=number, match=self, price=self.seat_price)
             for number in range(1, self.stadium.capacity)
         ]
 
@@ -104,6 +105,7 @@ class Seat(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE, verbose_name=_("match"))
     is_reserved = models.BooleanField(verbose_name=_("is reserved?"), default=False)
     full_name = models.CharField(verbose_name=_("full name"), default="")
+    price = models.PositiveIntegerField(verbose_name=_("price"))
 
     class Meta:
         verbose_name = _("seat")

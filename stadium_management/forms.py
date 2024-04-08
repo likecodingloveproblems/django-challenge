@@ -1,6 +1,8 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
+from stadium_management.models import Match
+
 
 class MatchAdminAddForm(forms.ModelForm):
     """
@@ -15,4 +17,5 @@ class MatchAdminAddForm(forms.ModelForm):
     )
 
     class Meta:
-        fields = ["host_team", "guest_team", "stadium", "datetime"]
+        model = Match
+        fields = ["host_team", "guest_team", "stadium", "datetime", "seat_price"]
