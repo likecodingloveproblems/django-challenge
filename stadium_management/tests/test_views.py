@@ -148,3 +148,39 @@ class MatchViewSetTest(BaseTestCase, APITestCase):
         data["does_create_seats"] = False
         self.test_create_view(data=data)
         assert not Seat.objects.exists()
+
+
+class SeatViewSetTest(BaseTestCase, APITestCase):
+    model = Seat
+    list_namespace = "api:stadium_management:seat-list"
+    detail_namespace = "api:stadium_management:seat-detail"
+
+    def setUp(self):
+        super().setUp()
+        self.stadium = baker.make(Stadium, capacity=5)
+        self.match = baker.make(Match, id=1, stadium=self.stadium)
+        self.seat = baker.make(Seat, id=1, match=self.match, number=1)
+        self.reserved_seat = baker.make(
+            Seat,
+            id=2,
+            match=self.match,
+            number=2,
+            is_reserved=True,
+            full_name="Jon Doe",
+        )
+
+    def get_create_data(self) -> dict:
+        return {"number": 3, "match": 1, "price": 1000}
+
+    def get_update_data(self) -> dict:
+        return {"number": 4, "match": 1, "price": 2000}
+
+    def get_partial_update_data(self) -> dict:
+        return {"price": 3000}
+
+    def test_can_not_update_reserved_seats(self):
+        response = self.client.patch(
+            self.get_detail_url({"pk": 2}),
+            {"price": 10_000},
+        )
+        assert response.status_code == status.HTTP_403_FORBIDDEN
