@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 
 from accounting.exceptions import AlreadyReservedSeatError
+from accounting.exceptions import ProcessFailed
 from accounting.models import Invoice
 from accounting.models import InvoiceItem
 from stadium_management.models import Seat
@@ -68,8 +69,11 @@ class AddInvoiceItemSerializer(serializers.ModelSerializer):
                 status=Invoice.InvoiceStatus.PENDING,
                 user=self._user,
             )
+            invoice.total_price += seat.price
+            invoice.save(update_fields=["total_price"])
             return InvoiceItem.objects.create(
                 invoice=invoice,
                 seat=seat,
                 **validated_data,
             )
+        raise ProcessFailed

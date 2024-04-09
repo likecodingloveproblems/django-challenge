@@ -1,3 +1,5 @@
+from rest_framework import status
+from rest_framework.exceptions import APIException
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.exceptions import ValidationError
 
@@ -29,3 +31,10 @@ class OnlyPendingInvoice(PermissionDenied):
 
     code = "only_pending_invoice"
     detail = "Only pending invoices can be modified!"
+
+
+class ProcessFailed(APIException):
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = "Process failed because of some unkown reasons."
+    "please contact support!"
+    default_code = "process_failed"

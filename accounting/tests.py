@@ -71,6 +71,8 @@ class AddInvoiceItemViewTest(BaseAuthenticatedUserAPITestCase):
         self.seat.refresh_from_db()
         assert self.seat.full_name == "Jon Smith"
         assert self.seat.is_reserved
+        invoice = Invoice.objects.get(user=self.user)
+        assert invoice.total_price == self.seat.price
 
     def test_add_item_when_there_is_reserved(self):
         baker.make(Invoice, id=1, user=self.user)

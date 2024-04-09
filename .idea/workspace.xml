@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounting/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/tests.py" afterDir="false" />
     </list>
@@ -44,35 +45,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.runserver.executor": "Run",
-    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice.executor": "Debug",
-    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat.executor": "Debug",
-    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found.executor": "Debug",
-    "Django tests.Test: accounting.tests.InvoiceViewTest.executor": "Debug",
-    "Django tests.Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team.executor": "Run",
-    "Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats.executor": "Debug",
-    "Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed.executor": "Debug",
-    "Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats.executor": "Debug",
-    "Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name.executor": "Debug",
-    "Django tests.test.executor": "Run",
-    "Python.manage.executor": "Debug",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/mam/mycode/arman-challenge/django-challenge/manage.py",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.pyOptions",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.runserver.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: accounting.tests.InvoiceViewTest.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mam/mycode/arman-challenge/django-challenge/manage.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.pyOptions&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/matchticketselling/users/api" />
@@ -341,7 +342,7 @@
       <workItem from="1712604576392" duration="10086000" />
       <workItem from="1712671275409" duration="1412000" />
       <workItem from="1712692894310" duration="1171000" />
-      <workItem from="1712694777047" duration="450000" />
+      <workItem from="1712694777047" duration="1092000" />
     </task>
     <servers />
   </component>
@@ -368,13 +369,8 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/accounting/tests.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/accounting/serializers.py</url>
-          <line>60</line>
+          <line>59</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
