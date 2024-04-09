@@ -31,7 +31,7 @@ class InvoiceView(APIView):
         :rtype: Response
         """
         invoice = get_object_or_404(
-            Invoice.objects.select_related("invoiceitem_set__seat__match"),
+            Invoice.objects.prefetch_related("invoiceitem_set__seat__match"),
             id=invoice_id,
         )
         if invoice.user_id != request.user.id:
@@ -108,7 +108,7 @@ class PayInvoiceView(APIView):
         :rtype: Response
         """
         invoice: Invoice = get_object_or_404(
-            Invoice.objects.select_related("invoiceitem_set__seat__match").filter(
+            Invoice.objects.select_related("invoiceitem__seat__match").filter(
                 status=Invoice.InvoiceStatus.PENDING,
             ),
             id=invoice_id,

@@ -11,6 +11,7 @@ from accounting.models import InvoiceItem
 
 
 def expire_inactive_invoice_items():
+    # TODO: it must be setup in celery as periodic task to be run each 5 minutes
     """
     This celery task check invoices and expire inactive invoice items after 10 minutes
     and make seat free
