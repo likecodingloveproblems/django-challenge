@@ -1,7 +1,11 @@
 from django.db import models
+from django.test import Client
+from django.test import TestCase
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.response import Response
+
+from matchticketselling.users.models import User
 
 
 class TimeStampedModel(models.Model):
@@ -25,3 +29,10 @@ class OkResponse(Response):
         **kwargs,
     ):
         super().__init__(*args, data=data, status=status, **kwargs)
+
+
+class AdminTestCase(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_superuser(username="test")
+        self.client.force_login(user=self.user)
