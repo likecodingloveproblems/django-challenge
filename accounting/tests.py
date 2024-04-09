@@ -1,4 +1,7 @@
+from datetime import datetime
+
 from django.urls import reverse
+from django.utils import timezone
 from model_bakery import baker
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -8,6 +11,8 @@ from accounting.models import InvoiceItem
 from matchticketselling.users.models import User
 from stadium_management.models import Match
 from stadium_management.models import Seat
+from stadium_management.models import Stadium
+from stadium_management.models import Team
 
 
 class BaseAuthenticatedUserAPITestCase(APITestCase):
@@ -29,14 +34,61 @@ class InvoiceViewTest(BaseAuthenticatedUserAPITestCase):
 
     def setUp(self):
         super().setUp()
-        self.invoice = baker.make(Invoice, id=1, user=self.user)
-        self.item = baker.make(InvoiceItem, invoice=self.invoice)
+        self.stadium = baker.make(Stadium, name="azadi")
+        self.host_team = baker.make(Team, name="team1")
+        self.guest_team = baker.make(Team, name="team2")
+        self.match = baker.make(
+            Match,
+            stadium=self.stadium,
+            host_team=self.host_team,
+            guest_team=self.guest_team,
+            datetime=datetime(
+                2024,
+                1,
+                1,
+                21,
+                30,
+                tzinfo=timezone.get_current_timezone(),
+            ),
+            seat_price=1000,
+        )
+        self.seat = baker.make(
+            Seat,
+            number=1,
+            match=self.match,
+            is_reserved=True,
+            full_name="Jon Smith",
+            price=1000,
+        )
+        self.invoice = baker.make(Invoice, id=1, user=self.user, total_price=1000)
+        self.item = baker.make(
+            InvoiceItem,
+            invoice=self.invoice,
+            seat=self.seat,
+            full_name="Jon Smith",
+        )
         other = User.objects.create(username="other")
         self.invalid_invoice = baker.make(Invoice, id=2, user=other)
 
     def test_get_invoice_view(self):
         response = self.client.get(self.get_url(1))
         assert response.status_code == status.HTTP_200_OK
+        assert response.data == {
+            "status": "Pending",
+            "total_price": 1000,
+            "paid_at": None,
+            "items": [
+                {
+                    "full_name": "Jon Smith",
+                    "seat": {
+                        "number": 1,
+                        "price": 1000,
+                        "match_name": "team1:team2 at 2024-01-01 21:30:00+00:00"
+                        " in azadi",
+                    },
+                },
+            ],
+        }
 
     def test_not_found(self):
         response = self.client.get(self.get_url(3))

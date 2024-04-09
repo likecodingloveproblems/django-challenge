@@ -30,11 +30,18 @@ class InvoiceItemSerializer(serializers.ModelSerializer):
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
-    items = InvoiceItemSerializer(many=True, read_only=True)
+    items = serializers.SerializerMethodField()
+    status = serializers.SerializerMethodField()
 
     class Meta:
         model = Invoice
         fields = ["status", "total_price", "paid_at", "items"]
+
+    def get_items(self, obj: Invoice) -> dict:
+        return InvoiceItemSerializer(obj.invoiceitem_set.all(), many=True).data
+
+    def get_status(self, obj: Invoice) -> str:
+        return obj.get_status_display()
 
 
 class AddInvoiceItemSerializer(serializers.ModelSerializer):
