@@ -75,26 +75,30 @@ class BaseTestCase:
         response = self.client.get(self.get_detail_url({"pk": obj.id}))
         assert response.status_code == status.HTTP_200_OK
 
-    def test_update_view(self):
+    def test_update_view(self, status_code=status.HTTP_200_OK):
         obj = baker.make(self.model)
         response = self.client.put(
             self.get_detail_url({"pk": obj.id}),
             self.get_update_data(),
         )
-        assert response.status_code == status.HTTP_200_OK
+        assert response.status_code == status_code
 
-    def test_partial_update_view(self):
+    def test_partial_update_view(self, status_code=status.HTTP_200_OK):
         obj = baker.make(self.model)
         response = self.client.patch(
             self.get_detail_url({"pk": obj.id}),
             self.get_partial_update_data(),
         )
-        assert response.status_code == status.HTTP_200_OK
+        assert response.status_code == status_code
 
-    def test_create_view(self):
-        response = self.client.post(self.get_list_url(), self.get_create_data())
-        assert response.status_code == status.HTTP_201_CREATED
-        assert self.model.objects.filter(**self.get_create_data()).exists()
+    def test_create_view(self, status_code=status.HTTP_201_CREATED, data=None):
+        response = self.client.post(
+            self.get_list_url(),
+            data if data else self.get_create_data(),
+        )
+        assert response.status_code == status_code
+        if status_code == status.HTTP_201_CREATED:
+            assert self.model.objects.filter(**self.get_create_data()).exists()
 
     def test_successful_delete(self):
         obj = baker.make(self.model)
