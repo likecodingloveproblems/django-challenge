@@ -90,6 +90,8 @@ class RemoveItemFromInvoiceView(APIView):
             invoice.total_price = F("total_price") - item.seat.price
             invoice.save(update_fields=["total_price"])
             item.delete()
+            if not invoice.invoiceitem_set.exists():
+                invoice.delete()
         return OkResponse()
 
 

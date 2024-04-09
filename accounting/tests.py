@@ -6,6 +6,7 @@ from rest_framework.test import APITestCase
 from accounting.models import Invoice
 from accounting.models import InvoiceItem
 from matchticketselling.users.models import User
+from stadium_management.models import Match
 from stadium_management.models import Seat
 
 
@@ -105,3 +106,29 @@ class AddInvoiceItemViewTest(BaseAuthenticatedUserAPITestCase):
         )
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data["seat"][0].code == "does_not_exist"
+
+
+class RemoveItemFromInvoiceViewTest(BaseAuthenticatedUserAPITestCase):
+    namespace = "api:accounting:remove-invoice-item"
+
+    def setUp(self):
+        super().setUp()
+        self.match = baker.make(Match)
+        self.seat1 = baker.make(Seat, match=self.match, number=1, price=1000)
+        self.seat2 = baker.make(Seat, match=self.match, number=2, price=2000)
+        self.invoice = baker.make(Invoice, user=self.user, total_price=3000)
+        self.item1 = baker.make(InvoiceItem, invoice=self.invoice, seat=self.seat1)
+        self.item2 = baker.make(InvoiceItem, invoice=self.invoice, seat=self.seat2)
+        self.invoice.save(update_fields=["total_price"])
+
+    def test_remove_one_item(self):
+        response = self.client.delete(self.get_url(kwargs={"item_id": self.item1.id}))
+        assert response.status_code == status.HTTP_200_OK
+        assert self.invoice.invoiceitem_set.count() == 1
+        assert self.invoice.invoiceitem_set.first().id == self.item2.id
+
+    def test_invoice_deleted_when_has_not_item(self):
+        for item_id in InvoiceItem.objects.values_list("id", flat=True):
+            response = self.client.delete(self.get_url(kwargs={"item_id": item_id}))
+            assert response.status_code == status.HTTP_200_OK
+        assert not Invoice.objects.exists()

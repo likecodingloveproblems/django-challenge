@@ -23,7 +23,7 @@ class Invoice(TimeStampedModel):
         max_length=4,
         db_index=True,
     )
-    total_price = models.PositiveIntegerField(null=True, blank=True)
+    total_price = models.PositiveIntegerField(default=0)
     paid_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
