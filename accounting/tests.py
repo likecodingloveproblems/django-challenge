@@ -132,3 +132,25 @@ class RemoveItemFromInvoiceViewTest(BaseAuthenticatedUserAPITestCase):
             response = self.client.delete(self.get_url(kwargs={"item_id": item_id}))
             assert response.status_code == status.HTTP_200_OK
         assert not Invoice.objects.exists()
+
+
+class PayInvoiceView(BaseAuthenticatedUserAPITestCase):
+    namespace = "api:accounting:pay-invoice"
+
+    def setUp(self):
+        super().setUp()
+        self.invoice = baker.make(
+            Invoice,
+            user=self.user,
+            paid_at=None,
+            status=Invoice.InvoiceStatus.PENDING,
+        )
+
+    def test_pay_invoice(self):
+        response = self.client.post(
+            self.get_url(kwargs={"invoice_id": self.invoice.id}),
+        )
+        assert response.status_code == status.HTTP_200_OK
+        self.invoice.refresh_from_db()
+        assert self.invoice.paid_at is not None
+        assert self.invoice.status == Invoice.InvoiceStatus.PAID

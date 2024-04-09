@@ -110,7 +110,7 @@ class PayInvoiceView(APIView):
         :rtype: Response
         """
         invoice: Invoice = get_object_or_404(
-            Invoice.objects.select_related("invoiceitem__seat__match").filter(
+            Invoice.objects.prefetch_related("invoiceitem_set__seat__match").filter(
                 status=Invoice.InvoiceStatus.PENDING,
             ),
             id=invoice_id,

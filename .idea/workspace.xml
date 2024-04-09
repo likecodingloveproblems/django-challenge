@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounting/migrations/0002_alter_invoice_total_price.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/views.py" afterDir="false" />
     </list>
@@ -345,7 +343,7 @@
       <workItem from="1712604576392" duration="10086000" />
       <workItem from="1712671275409" duration="1412000" />
       <workItem from="1712692894310" duration="1171000" />
-      <workItem from="1712694777047" duration="3062000" />
+      <workItem from="1712694777047" duration="3501000" />
     </task>
     <servers />
   </component>
@@ -370,11 +368,6 @@
           <url>file://$PROJECT_DIR$/stadium_management/tests/test_admin.py</url>
           <line>17</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/accounting/tests.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
