@@ -1,8 +1,8 @@
 from django.db import transaction
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 
 from accounting.exceptions import AlreadyReservedSeatError
-from accounting.exceptions import OnlyPendingInvoice
 from accounting.models import Invoice
 from accounting.models import InvoiceItem
 from stadium_management.models import Seat
@@ -58,21 +58,18 @@ class AddInvoiceItemSerializer(serializers.ModelSerializer):
         """
         with transaction.atomic():
             seat = validated_data.pop("seat")
-            try:
-                seat = Seat.objects.select_for_update().get_object_or_404(
-                    Seat,
-                    id=seat.id,
-                    is_reserved=False,
-                )
-            except Seat.DoesNotExist:
-                raise AlreadyReservedSeatError  # noqa: B904
+            seat: Seat = get_object_or_404(Seat.objects.select_for_update(), id=seat.id)
+            if seat.is_reserved:
+                raise AlreadyReservedSeatError
             seat.is_reserved = True
-            seat.save(update_fields=["is_reserved"])
-            try:
-                invoice = Invoice.objects.get(
-                    status=Invoice.InvoiceStatus.PENDING,
-                    user=self._user,
-                )
-            except Invoice.DoesNotExist:
-                raise OnlyPendingInvoice  # noqa: B904
-            return InvoiceItem.objects.create(invoice=invoice, **validated_data)
+            seat.full_name = validated_data["full_name"]
+            seat.save(update_fields=["is_reserved", "full_name"])
+            invoice, _ = Invoice.objects.get_or_create(
+                status=Invoice.InvoiceStatus.PENDING,
+                user=self._user,
+            )
+            return InvoiceItem.objects.create(
+                invoice=invoice,
+                seat=seat,
+                **validated_data,
+            )

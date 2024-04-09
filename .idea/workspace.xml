@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8f7e4e9a-527d-4013-aa3a-8838a72fab5e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounting/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,39 +44,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.runserver.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: accounting.tests.InvoiceViewTest.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/mam/mycode/arman-challenge/django-challenge/manage.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.pyOptions&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.runserver.executor": "Run",
+    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice.executor": "Debug",
+    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat.executor": "Debug",
+    "Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found.executor": "Debug",
+    "Django tests.Test: accounting.tests.InvoiceViewTest.executor": "Debug",
+    "Django tests.Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team.executor": "Run",
+    "Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats.executor": "Debug",
+    "Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed.executor": "Debug",
+    "Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats.executor": "Debug",
+    "Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name.executor": "Debug",
+    "Django tests.test.executor": "Run",
+    "Python.manage.executor": "Debug",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/mam/mycode/arman-challenge/django-challenge/manage.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.pyOptions",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/matchticketselling/users/api" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: accounting.tests.InvoiceViewTest">
+  <component name="RunManager" selected="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found">
+    <configuration name="Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="matchticketselling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="matchticketselling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="matchticketselling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="accounting.tests.AddInvoiceItemViewTest.test_seat_not_found" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: accounting.tests.InvoiceViewTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="matchticketselling" />
       <option name="ENV_FILES" value="" />
@@ -93,69 +158,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="accounting.tests.InvoiceViewTest" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="matchticketselling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="matchticketselling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="matchticketselling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -295,27 +297,27 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django tests.Test: accounting.tests.InvoiceViewTest" />
-      <item itemvalue="Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats" />
-      <item itemvalue="Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed" />
-      <item itemvalue="Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats" />
-      <item itemvalue="Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name" />
-      <item itemvalue="Django tests.test" />
-      <item itemvalue="Python.manage" />
-      <item itemvalue="Python.merge_production_dotenvs_in_dotenv" />
       <item itemvalue="Django Server.runserver_plus" />
       <item itemvalue="Django Server.migrate" />
       <item itemvalue="Django Server.runserver" />
+      <item itemvalue="Django tests.test" />
+      <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found" />
+      <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat" />
+      <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice" />
+      <item itemvalue="Django tests.Test: accounting.tests.InvoiceViewTest" />
+      <item itemvalue="Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.merge_production_dotenvs_in_dotenv" />
       <item itemvalue="Python tests.pytest: users" />
       <item itemvalue="Python tests.pytest: ." />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found" />
+        <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat" />
+        <item itemvalue="Django tests.Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice" />
         <item itemvalue="Django tests.Test: accounting.tests.InvoiceViewTest" />
         <item itemvalue="Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name" />
-        <item itemvalue="Django tests.Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats" />
-        <item itemvalue="Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats" />
-        <item itemvalue="Django tests.Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed" />
       </list>
     </recent_temporary>
   </component>
@@ -337,6 +339,9 @@
       <workItem from="1712496495645" duration="9702000" />
       <workItem from="1712555879265" duration="30444000" />
       <workItem from="1712604576392" duration="10086000" />
+      <workItem from="1712671275409" duration="1412000" />
+      <workItem from="1712692894310" duration="1171000" />
+      <workItem from="1712694777047" duration="450000" />
     </task>
     <servers />
   </component>
@@ -362,6 +367,16 @@
           <line>17</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/accounting/tests.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/accounting/serializers.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -372,12 +387,15 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/django_challenge$manage.coverage" NAME="manage Coverage Results" MODIFIED="1712607577123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/django_challenge$Test__accounting_tests_InvoiceViewTest.coverage" NAME="Test: accounting.tests.InvoiceViewTest Coverage Results" MODIFIED="1712670038803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/django_challenge$Test__accounting_tests_AddInvoiceItemViewTest_test_can_not_add_reserved_seat.coverage" NAME="Test: accounting.tests.AddInvoiceItemViewTest.test_can_not_add_reserved_seat Coverage Results" MODIFIED="1712693790680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/django_challenge$Test__accounting_tests_AddInvoiceItemViewTest_test_add_item_when_there_is_not_invoice.coverage" NAME="Test: accounting.tests.AddInvoiceItemViewTest.test_add_item_when_there_is_not_invoice Coverage Results" MODIFIED="1712672621613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_admin_TestTeamAdmin_test_view_team.coverage" NAME="Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team Coverage Results" MODIFIED="1712658612868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_views_SeatViewSetTest_test_reserved_seats_must_have_full_name.coverage" NAME="Test: stadium_management.tests.test_views.SeatViewSetTest.test_reserved_seats_must_have_full_name Coverage Results" MODIFIED="1712667799124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_views_SeatViewSetTest_test_can_not_update_reserved_seats.coverage" NAME="Test: stadium_management.tests.test_views.SeatViewSetTest.test_can_not_update_reserved_seats Coverage Results" MODIFIED="1712667741792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/django_challenge$Test__accounting_tests_InvoiceViewTest.coverage" NAME="Test: accounting.tests.InvoiceViewTest Coverage Results" MODIFIED="1712670038803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$test.coverage" NAME="test Coverage Results" MODIFIED="1712658509144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$pytest.coverage" NAME="pytest Coverage Results" MODIFIED="1712654094646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_admin_TestTeamAdmin_test_view_team.coverage" NAME="Test: stadium_management.tests.test_admin.TestTeamAdmin.test_view_team Coverage Results" MODIFIED="1712658612868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/django_challenge$Test__accounting_tests_AddInvoiceItemViewTest_test_seat_not_found.coverage" NAME="Test: accounting.tests.AddInvoiceItemViewTest.test_seat_not_found Coverage Results" MODIFIED="1712695118001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_views_MatchViewSetTest_test_overlapped_match_is_not_allowed.coverage" NAME="Test: stadium_management.tests.test_views.MatchViewSetTest.test_overlapped_match_is_not_allowed Coverage Results" MODIFIED="1712665816768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/django_challenge$Test__stadium_management_tests_test_views_MatchViewSetTest_test_deos_not_create_seats.coverage" NAME="Test: stadium_management.tests.test_views.MatchViewSetTest.test_deos_not_create_seats Coverage Results" MODIFIED="1712666409066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
